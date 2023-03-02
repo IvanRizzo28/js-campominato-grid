@@ -7,5 +7,40 @@ con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 
 con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
 */
-
 'use strict';
+
+/*
+funzioni
+*/
+
+function creaCelle(elemento,classe,contenuto,difficolta=10){
+    let element=document.createElement(elemento);
+    element.classList.add(classe);
+    element.innerText=contenuto;
+    diff.style.setProperty('--difficolta', difficolta);
+    element.addEventListener("click", function(){
+        element.classList.add("blu");
+        console.log(contenuto);
+    });
+    container.append(element);
+}
+
+/*
+main
+*/
+const start=document.getElementById("start");
+const select=document.getElementById("select");
+const container=document.querySelector(".container");
+const diff = document.querySelector(':root');
+let rs = getComputedStyle(diff);
+/*console.log(rs.getPropertyValue('--difficolta'));
+diff.style.setProperty('--difficolta', '7');
+console.log(rs.getPropertyValue('--difficolta'));*/
+
+start.addEventListener("click", function(){
+    container.innerHTML="";
+    //console.log(select.value);
+    let dim=Math.pow(select.value,2);
+    //console.log(dim);
+    for(let i=0;i<dim;i++)  creaCelle("div","cell",i+1,select.value);
+});
