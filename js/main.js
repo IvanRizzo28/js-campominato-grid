@@ -33,14 +33,9 @@ const select=document.getElementById("select");
 const container=document.querySelector(".container");
 const diff = document.querySelector(':root');
 let rs = getComputedStyle(diff);
-/*console.log(rs.getPropertyValue('--difficolta'));
-diff.style.setProperty('--difficolta', '7');
-console.log(rs.getPropertyValue('--difficolta'));*/
 
 start.addEventListener("click", function(){
     container.innerHTML="";
-    //console.log(select.value);
     let dim=Math.pow(select.value,2);
-    //console.log(dim);
     for(let i=0;i<dim;i++)  creaCelle("div","cell",i+1,select.value);
 });
