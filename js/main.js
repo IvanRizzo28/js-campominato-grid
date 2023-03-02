@@ -12,12 +12,14 @@ con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 
 /*
 funzioni
 */
+function setDifficolta(difficolta){
+    diff.style.setProperty('--difficolta', difficolta);
+}
 
-function creaCelle(elemento,classe,contenuto,difficolta=10){
+function creaCelle(elemento,classe,contenuto){
     let element=document.createElement(elemento);
     element.classList.add(classe);
     element.innerText=contenuto;
-    diff.style.setProperty('--difficolta', difficolta);
     element.addEventListener("click", function(){
         element.classList.add("blu");
         console.log(contenuto);
@@ -32,10 +34,9 @@ const start=document.getElementById("start");
 const select=document.getElementById("select");
 const container=document.querySelector(".container");
 const diff = document.querySelector(':root');
-let rs = getComputedStyle(diff);
 
 start.addEventListener("click", function(){
     container.innerHTML="";
-    let dim=Math.pow(select.value,2);
-    for(let i=0;i<dim;i++)  creaCelle("div","cell",i+1,select.value);
+    setDifficolta(select.value);
+    for(let i=0;i<Math.pow(select.value,2);i++)  creaCelle("div","cell",i+1);
 });
