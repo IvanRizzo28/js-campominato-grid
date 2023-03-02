@@ -1,0 +1,5 @@
+- Genero tutti i quadrati tramite una funzione che andrò a creare. Come argomenti che passo alla funzione ci sarà: il tipo di elemento che voglio creare, la classe che vado ad aggiungere e la difficoltà.
+- Prima di generare la griglia resetto il DOM tramite innerHTML
+- nelle select per la difficoltà metterò come value 10,9,7 che danno informazione sulla difficoltà
+- quando passo la difficolta nella funzione la elevo in potenza con se stessa in modo da creare la lunghezza dell'array, cosi facendo evito di scrivere degli if.
+- ad ogni difficoltà sarà associata una classe css fatta apposta per il livello
