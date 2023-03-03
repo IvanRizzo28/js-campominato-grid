@@ -71,4 +71,5 @@ main{
 .blu{
     background-color: blue;
     color: #fff;
+    pointer-events: none;
 }
